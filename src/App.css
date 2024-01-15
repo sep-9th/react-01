@@ -36,3 +36,25 @@
     transform: rotate(360deg);
   }
 }
+
+#root{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 50%);
+}
+
+.postingCard{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.postContent{
+  height: 100%;
+  overflow: hidden;
+}
+
+.MuiTypography-root{
+  overflow: scroll;
+  height: 100%;
+}
