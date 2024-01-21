@@ -1,14 +1,19 @@
 import './App.css';
-import PostingCard from "./components/main/PostingCard";
-import {data} from './data'
+import {Routes, Route} from 'react-router-dom'
+import BlogMain from './pages/main/BlogMain'
+import Login from './pages/login/Login'
+import Header from './components/main/Header'
+import MainPostingCard from './components/main/MainPostingCard'
 
-function App() {
+const App = () => {
   return (
     <>
-     {data.map(posting =>
-      
-      <PostingCard className='postingCard' key={posting.postingID} arr={posting}/>
-      )};
+      <Header/>
+      <Routes>
+        <Route path='/' element={<BlogMain/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/postingNew' element={<MainPostingCard/>}/>
+      </Routes>
     </>
   );
 }

@@ -5,7 +5,6 @@ import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -28,8 +27,10 @@ const ExpandMore = styled((props) => {
 
 const PostingCard = (posting) => {
   const [expanded, setExpanded] = React.useState(false);
+  const [displayType, setDisplayType] = React.useState('-webkit-box');
   const handleExpandClick = () => {
     setExpanded(!expanded);
+    setDisplayType(expanded ? '-webkit-box' : 'block');
   };
 
   var contents = document.createElement('div');
@@ -37,10 +38,9 @@ const PostingCard = (posting) => {
 
   let innerContent = '';
   contents.querySelectorAll('p').forEach((inner)=>{innerContent+=inner.innerText});
-  console.log(posting);
   
   return (
-    <Card className='postingCard' sx={{ maxWidth: 345 }}>
+    <Card className='postingCard' sx={{ maxWidth: 345, minHeight: 455.08 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -61,9 +61,9 @@ const PostingCard = (posting) => {
         image={posting.arr.thumbnailImageURL}
         alt="Paella dish"
       />
-      <CardContent className='postContent'>
+      <CardContent className='post'>
         {posting.arr.title}
-        <Typography variant="body2" color="text.secondary">
+        <Typography className='postContent' variant="body2" color="text.secondary" display={displayType}>
           {innerContent}
         </Typography>
       </CardContent>

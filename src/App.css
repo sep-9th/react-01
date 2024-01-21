@@ -37,6 +37,7 @@
   }
 }
 
+/*
 #root{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,8 +54,26 @@
   height: 100%;
   overflow: hidden;
 }
+*/
 
-.MuiTypography-root{
-  overflow: scroll;
-  height: 100%;
+.blogMain{
+  /*
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: baseline;
+  justify-items: center;
+  */
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-flow: row wrap;
+}
+
+.postContent{
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
