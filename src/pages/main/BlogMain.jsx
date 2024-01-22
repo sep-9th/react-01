@@ -6,7 +6,6 @@ const BlogMain = () => {
     return(
         <div className='blogMain'>
             {data.map(posting =>
-      
             <PostingCard className='postingCard' key={posting.postingID} arr={posting}/>
             )}
         </div>
