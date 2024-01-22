@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react';
 import { Button } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-
 const Header = () => {
 
   const location = useLocation();
@@ -28,7 +27,7 @@ const Header = () => {
   };
 
   return (
-        <div style={{display:'flex', justifyContent:'space-between'}}>
+        <div style={{display:'flex', justifyContent:'space-between', padding: '10px'}}>
           <div style={{fontWeight: 'bold', fontSize:'25px'}} onClick={()=> navigate('/')}>Ethan's Page</div>
           <div>
               <Button onClick={() => clickHeaderBtn()}>{button}</Button>
