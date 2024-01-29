@@ -40,7 +40,7 @@ const PostingCard = (posting) => {
   contents.querySelectorAll('p').forEach((inner)=>{innerContent+=inner.innerText});
   
   return (
-    <Card className='postingCard' sx={{ maxWidth: 345, minHeight: 455.08 }}>
+    <Card className='postingCard' sx={{ width: 340, minHeight: 455.08 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
