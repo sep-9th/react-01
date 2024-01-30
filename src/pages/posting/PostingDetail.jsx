@@ -10,7 +10,7 @@ const PostingDetail = ()=>{
     let id = window.location.pathname.split('/');
     
     useEffect(()=>{
-        axios.get(`http://localhost:4000/postingDetail?id=${id[2]}`).then((res)=>{
+        axios.get(`http://localhost:4000/postingDetail?id=${id[4]}`).then((res)=>{
             if(res.status === 200){
                 debugger;
                 setData(res.data[0]);

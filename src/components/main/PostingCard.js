@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { useNavigate } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -33,14 +34,23 @@ const PostingCard = (posting) => {
     setDisplayType(expanded ? '-webkit-box' : 'block');
   };
 
+  debugger;
+
   var contents = document.createElement('div');
   contents.innerHTML = posting.arr.htmlContent;
 
   let innerContent = '';
   contents.querySelectorAll('p').forEach((inner)=>{innerContent+=inner.innerText});
+
+  const navigate = useNavigate();
   
+  const CardClick = (param)=>{
+    navigate(`/blogs/${posting.arr.blogID}/postings/${posting.arr.postingID}`);
+  }
+
   return (
-    <Card className='postingCard' sx={{ width: 340, minHeight: 455.08 }}>
+    <Card className='postingCard' sx={{ width: 340, minHeight: 455.08 }}
+    onClick={CardClick}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
