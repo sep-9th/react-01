@@ -12,7 +12,6 @@ const PostingDetail = ()=>{
     useEffect(()=>{
         axios.get(`http://localhost:4000/postingDetail?id=${id[4]}`).then((res)=>{
             if(res.status === 200){
-                debugger;
                 setData(res.data[0]);
             }
         })
