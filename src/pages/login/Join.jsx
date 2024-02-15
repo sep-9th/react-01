@@ -159,7 +159,7 @@ const Join = () => {
                   sx={{ mt: 3, ml: 1 }}
                   disabled={disabled}
                 >
-                  {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                  {activeStep === steps.length - 1 ? 'Sign Up' : 'Next'}
                 </Button>
               </Box>
             </React.Fragment>
